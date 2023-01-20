@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/f3194d74a0.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <title>Cart Page</title>
+</head>
+<body>
+    <header>
+
+
+
+        <div class="first">
+            <div class="flex logo">
+
+
+                <a href="#"> <img
+                        src="https://pnggrid.com/wp-content/uploads/2021/05/Amazon-Logo-Transparent-2048x620.png"
+                        alt=""></a>
+                <div class="map flex">
+
+                    <div>
+                        <span> &nbsp; &nbsp; Hello</span>
+                        <br>
+                        <i class="fas fa-map-marker"></i>
+
+                        <span>Select your address</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex input">
+                <div>
+                    <span>All</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <input type="text">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="flex right">
+                <div class="flex lang">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbC86pLA9G9jHNgJpjouaOtzwwa1tHr3vy0vcK2CcGyg&s"
+                        alt="">
+                    <span>EN</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="sign">
+                    <span>Hello, sign in </span>
+                    <div class="flex ac">
+                        <span>Account & Lists</span>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                </div>
+                <div class="sign">
+                    <span>Returns</span>
+                    <span>& Orders</span>
+                </div>
+                <div class="flex cart">
+                    <i class="fas fa-shopping-cart"> </i>
+                    <span class="C">Cart</span>
+                    <p>0</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="two">
+            <div class="two-1">
+                <div>
+                    <i class="fas fa-bars"></i>
+                    <span>All</span>
+                </div>
+            </div>
+            <div class="two-2">
+                <ul>
+                    <li>Amazon miniTV</li>
+                    <li>Best Sellers</li>
+                    <li> Mobile <a target="_blank" href="./product-page.html">.</a> </li>
+                    <li> Today's Deals</li>
+                    <li>Customer Service</li>
+                    <li> Electronics</li>
+                    <li> Prime</li>
+                    <li>Fashion</li>
+                    <li>Amazon Pay</li>
+                    <li>Home & Kitchen</li>
+
+                </ul>
+            </div>
+            <div class="two-3">
+                <span>Great Republic Day Sale | LIVE NOW</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+    </header>
+
+    <h1>Your Total Price  is <span id="cart-total"></span></h1>
+
+    <div id="cart-container"></div>
+
+
+</body>
+<script>
+    let LSdata = JSON.parse(localStorage.getItem("Localdata")) || [];
+    let main = document.getElementById("cart-container")
+    function appendata(data){
+   
+        // container.innerHTML="";
+        let total = document.getElementById("cart-total");
+
+
+    LSdata.forEach((el) => {
+        
+        let box = document.createElement("div");
+        box.setAttribute("class","child");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", el.img);
+
+        let div2= document.createElement('div');
+        div2.setAttribute("class","div2")
+
+        let brand = document.createElement("h3");
+        brand.innerText = el.brand;
+        // brand.style.marginTop="25px";
+
+        let title = document.createElement("h3");
+        title.innerText = el.title;
+
+        let quantity = document.createElement("span");
+        quantity.textContent = el.quantity;
+
+
+        let offer = document.createElement("h4");
+        offer.innerText =  el.offer;
+
+        let Increment=document.createElement("button");
+        Increment.setAttribute("class","inc")
+        // button.innerText=el.button;
+        let decrement = document.createElement("button");
+        let remove = document.createElement("button");
+        remove.innerText = "Remove";
+        Increment.innerText = "+";
+        decrement.textContent= "-";
+
+        remove.addEventListener("click",()=>{});
+        Increment.addEventListener("click",()=>{});
+        decrement.addEventListener("click",()=>{});
+        
+
+        let price = document.createElement("p");
+        price.innerText = `₹${el.price}`;
+
+      
+        box.append(img);
+        div2.append(brand,title, price,offer, Increment,quantity,decrement,remove);
+        box.append(div2)
+      
+        main.append(box);
+
+    });
+
+    let sum=0;
+    for(let i=0;i<LSdata.length;i++){
+        sum+=LSdata[i].price * LSdata[i].quantity;
+    }
+    total.textContent = sum;
+}
+appendata();
+</script>
+</html>

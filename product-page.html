@@ -1,12 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/f3194d74a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="prduct-page.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+
     <title>product-comp</title>
 </head>
+
 <body>
     
+    <div class="first">
+        <div class="flex logo">
+
+
+            <a href="#"> <img
+                    src="https://pnggrid.com/wp-content/uploads/2021/05/Amazon-Logo-Transparent-2048x620.png"
+                    alt=""></a>
+            <div class="map flex">
+
+                <div>
+                    <span> &nbsp; &nbsp; Hello</span>
+                    <br>
+                    <i class="fas fa-map-marker"></i>
+
+                    <span>Select your address</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex input">
+            <div>
+                <span>All</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <input type="text">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="flex right">
+            <div class="flex lang">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbC86pLA9G9jHNgJpjouaOtzwwa1tHr3vy0vcK2CcGyg&s"
+                    alt="">
+                <span>EN</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <div class="sign">
+                <span>Hello, sign in </span>
+                <div class="flex ac">
+                    <span>Account & Lists</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="sign">
+                <span>Returns</span>
+                <span>& Orders</span>
+            </div>
+            <div class="flex cart">
+                <i class="fas fa-shopping-cart"> </i>
+                <span class="C"><a class="C" target="_blank" href="./cart.html">Cart</a></span>
+                <p>0</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="container">
+
+    </div>
 </body>
+<script>
+    let arr = [
+    {
+      id: 1,
+      img: "https://m.media-amazon.com/images/I/814ePfNubRL._AC_UY327_FMwebp_QL65_.jpg",
+      brand: "Samsung",
+      title: "Samsung Galaxy M04 Light Green, 4GB RAM, 128GB" ,
+      price: 10000.00,
+      offer : "15% off",
+      button: "Buy Now",
+      
+    },
+    {
+        id: 2,
+        img: "https://m.media-amazon.com/images/I/812yohjGZ2L._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Samsung",
+        title: "Samsung Galaxy M23 Light Green, 4GB RAM, 128GB" ,
+        price: 29000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 3,
+        img: "https://m.media-amazon.com/images/I/71geVdy6-OS._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "OPPO",
+        title: "OPPO A74 5G (Fantastic Purple,6GB RAM,128GB Storage)" ,
+        price: 9000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 4,
+        img: "https://m.media-amazon.com/images/I/810KHyQ4WcL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Redmi",
+        title: "Redmi 9A Sport (Coral Green, 2GB RAM, 32GB Storage) " ,
+        price: 14990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 5,
+        img: "https://m.media-amazon.com/images/I/81HJ4pkOsiL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Realmi",
+        title: "realme narzo 50i (Carbon Black, 2GB RAM+32GB Storage) " ,
+        price: 11990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 6,
+        img: "https://m.media-amazon.com/images/I/81UT07JsBqL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "One Plus",
+        title: "OnePlus Nord CE 2 Lite 5G  " ,
+        price: 15990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 7,
+        img: "https://m.media-amazon.com/images/I/71KCwNV6MuL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "OPPO",
+        title: "OPPO A31 (Mystery Black, 6GB RAM, 128GB Storage)  " ,
+        price: 11000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 8,
+        img: "https://m.media-amazon.com/images/I/81QqVNKWtML._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "One Plus",
+        title: "realme narzo 50i (Mint Green, 2GB RAM+32GB Storage)  " ,
+        price: 25990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 9,
+        img: "https://m.media-amazon.com/images/I/71poFSdDs5S._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "OPPO",
+        title: "OPPO A74 5G (Fluid Black, 6GB RAM, 128GB Storage)  " ,
+        price: 10990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 10,
+        img: "https://m.media-amazon.com/images/I/71yTvU9VgdL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Redmi",
+        title: "Redmi Note 11 (Space Black, 4GB RAM, 64GB Storage)|90Hz FHD+ AMOLED Display " ,
+        price: 35990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 11,
+        img: "https://m.media-amazon.com/images/I/71flXufDnbL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "One Plus",
+        title: "OnePlus 10T 5G (Jade Green, 8GB RAM, 128GB Storage)  " ,
+        price: 45990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 12,
+        img: "https://m.media-amazon.com/images/I/71kVEmAMyEL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Redmi",
+        title: "Redmi 10A (Slate Grey, 4GB RAM, 64GB Storage) " ,
+        price: 10890.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 13,
+        img: "https://m.media-amazon.com/images/I/81-fFXQdPTL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Samsung",
+        title: "Samsung Galaxy M13 (Aqua Green, 4GB, 64GB Storage) " ,
+        price: 13000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 14,
+        img: "https://m.media-amazon.com/images/I/71t7mcs1VoL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Redmi",
+        title: "Redmi 10A Sport (Slate Grey, 6GB RAM, 128GB Storage)" ,
+        price: 12000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 15,
+        img: "https://m.media-amazon.com/images/I/814ePfNubRL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Samsung",
+        title: "Samsung Galaxy M04 Light Green, 4GB RAM, 64GB Storage" ,
+        price: 17000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 16,
+        img: "https://m.media-amazon.com/images/I/817vyrOUqmL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Redmi",
+        title: "Redmi Note 12 5G Matte Black 4GB RAM 128GB ROM  " ,
+        price: 20000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 17,
+        img: "https://m.media-amazon.com/images/I/81-7A8yfUpL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Samsung",
+        title: "Samsung Galaxy M13 5G (Stardust Brown, 4GB, 64GB Storage)  " ,
+        price: 12000.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+      {
+        id: 18,
+        img: "https://m.media-amazon.com/images/I/9185sX9EGFL._AC_UY327_FMwebp_QL65_.jpg",
+        brand: "Techno",
+        title: "Tecno Spark 9 (Infinity Black, 4GB RAM,64GB Storage)  " ,
+        price: 5990.00,
+        offer : "15% off",
+        button: "Buy Now",
+        
+      },
+   
+  ];
+let LSdata = JSON.parse(localStorage.getItem("Localdata")) || [];
+function appendata(data){
+    let main = document.getElementById("container");
+    console.log(main);
+// main.innerHTML="";
+
+    data.forEach((el) => {
+        
+        let box = document.createElement("div");
+        box.setAttribute("class","child");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", el.img);
+
+        let div2= document.createElement('div');
+        div2.setAttribute("class","div2")
+
+        let brand = document.createElement("h3");
+        brand.innerText = el.brand;
+        // brand.style.marginTop="25px";
+
+        let title = document.createElement("h3");
+        title.innerText = el.title;
+
+        let offer = document.createElement("h4");
+        offer.innerText =  el.offer;
+
+        let button=document.createElement("button")
+        button.innerText=el.button;
+        button.style.backgroundColor="gold";
+        button.style.color="black";
+        button.style.cursor="Pointer";
+        button.style.width="100%";
+        button.style.height="40px";
+        button.style.marginTop="15px";
+
+        let price = document.createElement("p");
+        price.innerText = `₹${el.price}`;
+
+        button.addEventListener("click",()=>{
+          
+          if(checkDuplicate(el)){
+            alert("Product Already In The Cart")
+          }else{
+            LSdata.push({...el,quantity:1});
+            localStorage.setItem("Localdata",JSON.stringify(LSdata));
+            alert("Product Added to the Cart")
+          }
+        })
+       
+    
+        
+
+       
+        box.append(img);
+        div2.append(brand,title, price,offer, button);
+        box.append(div2)
+      
+        main.append(box);
+
+    });
+}
+appendata(arr)
+
+function checkDuplicate(el){
+
+  for(let i=0;i<LSdata.length;i++){
+    if(LSdata[i].id===el.id){
+      return true;
+    }
+  }
+  return false;
+}
+</script>
 </html>
