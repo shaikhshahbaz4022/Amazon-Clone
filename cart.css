@@ -303,10 +303,6 @@ i {
     border-radius: 3px;
 
 }
-.cart a{
-    text-decoration: none;
-    color: white;
-}
 
 .two li {
     font-weight: 800;
@@ -386,207 +382,52 @@ i {
 .two-3 span:hover {
     border: 1px solid white;
 }
-
-.section-1 {
-   
-    position: relative;
-    width: 100%;
-    height: 780px;
-    box-sizing: border-box;
+#cart-container{
+    margin: auto;
+   display: grid;
+   gap: 20px;
+   grid-template-columns: repeat(1,1fr);
+    width: 40%;
+    /* border: 1px solid red; */
+    
+}
+.child{
+    margin-top: 20px;
+    display: flex;
+    /* border: 2px solid blue; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: #EEEEEE;
 
 }
-
-#slideshow {
-    position: absolute;
+.child>img{
+width: 70%;
+height: 300px;
+margin-right: 40px;
 }
-
-#slideshow img {
-    width: 100%;
+.div2{
+ 
+    width: 60%;
+    margin: auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    /* border: 2px solid black; */
+}
+.div2>h3{
     
-}
-
-.container-1 {
-   
-    position:absolute;
-    z-index: 1;
-    top: 230px;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(to bottom,transparent,#eaeded 30%);
-}
-.container-1 div:nth-child(1){
-    font-size: 14px;
-    padding: 12px 0;
-}
-.product-comp{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    box-sizing: border-box;
-    margin: 20px 0;
-    justify-content: space-around;
-}
-.product-comp .box{
-    width: 24%;
-    height: 430px;
-    background-color: white;
-    
-}
-.box h3{
-    /* margin-top: 0px; */
-    margin-left: 10px;
     font-size: 20px;
-    margin-bottom: 10px;
-    color: rgb(43,42,42);
+    margin-top: 20px;
 }
-.box{
-    border: 1px solid red;
-    font-size: 13px;
-    margin-left: 20px;
-    display: block;
-    padding-top: 30px;
+.div2>p{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.div2 button{
     
-}
-.box div img{
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 90%;
-    /* height: 120px; */
-    cursor: pointer;
-    /* margin-left: -20px; */
-    margin-right: 0;
-}
-.box-a div{
-    display: inline-block;
-
-}
-.box-a div p{
-    margin-left: 10px;
-    margin-right: 10px;
-    display: block;
-    font-size: 15px;
-  
-}
-.box-a{
-    gap: 15px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-}
-.box-a {
-    margin-bottom: 10px;
-}
-.box a{
-    margin-left: 10px;
-}
-.box-b{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-}
-.box-b .best{
-    background-color: white;
-    height: 140px;
-    width: 315px;
-}
-.best h3{
-font-size: 21px;
-margin: 20px;
-margin-bottom: 15px;
-}
-.best button{
-    border-radius: 7px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    color: rgb(43,42,42);
-    background-color: #ffd814;
-    width: 280px;
-    margin-left: 20px;
-    height: 30px;
-    border: none;
-}
-.section-2{
-    width: 100%;
-    height: 320px;
-    padding: 25px;
-    padding-top: 0;
-    padding-bottom: 25px;
-}
-.slide-two h3{
-    font-size: 20px;
-    padding-bottom: 5px;
-
-}
-.slide-two{
-    width: 100%;
-    height: 100%;
-    padding: 20px 20px 10px 20px;
-    overflow-x: hidden;
-    background-color: white;
-    position: relative;
-
-}
-.product-slide{
-    display: flex;
-    margin-top: 5px;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-}
-.product-slide ::-webkit-scrollbar{
-    background-color: transparent;
-    height: 7px;
-    cursor: pointer;
-
-}
-.product-slide::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    cursor: pointer;
+   background-color: #714803;
+   color: white;
+   font-size: 20px;
+   margin: 5px;
     
-}
-.product-slide li{
-    list-style: none;
-    margin-right: 10px;
-    margin-bottom: 15px;
+    border-radius: 3px;
     cursor: pointer;
-
 }
-.btn-l,
-.btn-r{
-    
-    color: black;
-    padding-top: 25px;
-    background-color: transparent;
-    font-size: 40px;
-    height: 90px;
-    width: 50px;
-    text-align: center;
-    cursor: pointer;
-    top: 35%;
-    position: absolute;
-    border: 3px solid transparent;
-
-}
-.btn-l{
-    color: black;
-    border-radius: 0 5px 5px 0;
-    left: 20px;
-
-}
-.btn-r{
-    color: black;
-    border-radius: 5px 0 0 5px;
-    right: 20px;
-
-}
-.btn-l:hover{
-    border: 3px solid rgb(2,250,150);
-}
-.btn-r:hover{
-    border: 3px solid rgb(2,250,150);
-}
-
