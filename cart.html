@@ -18,7 +18,7 @@
             <div class="flex logo">
 
 
-                <a href="#"> <img
+                <a href="homepage.html"> <img
                         src="https://pnggrid.com/wp-content/uploads/2021/05/Amazon-Logo-Transparent-2048x620.png"
                         alt=""></a>
                 <div class="map flex">
@@ -62,7 +62,7 @@
                 <div class="flex cart">
                     <i class="fas fa-shopping-cart"> </i>
                     <span class="C">Cart</span>
-                    <p>0</p>
+                    <p id="show-value">0</p>
 
                 </div>
 
@@ -80,7 +80,8 @@
                 <ul>
                     <li>Amazon miniTV</li>
                     <li>Best Sellers</li>
-                    <li> Mobile <a target="_blank" href="./product-page.html">.</a> </li>
+                    <li><a target="_blank" href="./product-page.html">Mobile</a> </li>
+                   <li> Today's Deals</li>
                     <li> Today's Deals</li>
                     <li>Customer Service</li>
                     <li> Electronics</li>
@@ -107,9 +108,12 @@
 <script>
     let LSdata = JSON.parse(localStorage.getItem("Localdata")) || [];
     let main = document.getElementById("cart-container")
-    function appendata(data){
+    document.querySelector("#show-value").innerText =LSdata.length;
+
+    appendata();
+    function appendata(){
    
-        // container.innerHTML="";
+        main.innerHTML="";
         let total = document.getElementById("cart-total");
 
 
@@ -143,13 +147,33 @@
         // button.innerText=el.button;
         let decrement = document.createElement("button");
         let remove = document.createElement("button");
+        let buynow= document.createElement("button");
+        buynow.textContent= "Buy Now"
         remove.innerText = "Remove";
         Increment.innerText = "+";
         decrement.textContent= "-";
 
-        remove.addEventListener("click",()=>{});
-        Increment.addEventListener("click",()=>{});
-        decrement.addEventListener("click",()=>{});
+        remove.addEventListener("click",()=>{
+            LSdata=LSdata.filter((ele)=>{
+                return ele.id !== el.id
+            })
+            localStorage.setItem("Localdata",JSON.stringify(LSdata))
+            appendata()
+        });
+        Increment.addEventListener("click",()=>{
+            el=el.quantity++;
+            localStorage.setItem("Localdata",JSON.stringify(LSdata));
+            appendata();
+
+        });
+        decrement.addEventListener("click",()=>{
+            if(el.quantity>1){
+                el=el.quantity--;
+            localStorage.setItem("Localdata",JSON.stringify(LSdata));
+            appendata();
+            }
+            
+        });
         
 
         let price = document.createElement("p");
@@ -157,10 +181,11 @@
 
       
         box.append(img);
-        div2.append(brand,title, price,offer, Increment,quantity,decrement,remove);
+        div2.append(brand,title, price,offer, buynow,Increment,quantity,decrement,remove);
         box.append(div2)
       
         main.append(box);
+        document.querySelector("#show-value").innerText =LSdata.length;
 
     });
 
@@ -170,6 +195,6 @@
     }
     total.textContent = sum;
 }
-appendata();
+
 </script>
 </html>

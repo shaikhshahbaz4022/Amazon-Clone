@@ -54,7 +54,89 @@
        margin-bottom: 30px;
     }
    
-
+    .class-2,  .class-2a {
+    margin-bottom: 26px!important;
+    width: 87%;
+    margin-left: 6%;
+    margin-top: 6%;
+}
+.a-button-span12 {
+    width: 100%!important;
+}
+.a-button-primary {
+    background: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+.a-button {
+    background: #e7e9ec;
+    border-radius: 3px;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    text-decoration: none!important;
+    vertical-align: middle;
+}
+.a-button-primary .a-button-inner {
+    box-shadow: 0 1px 0 rgb(255 255 255 / 40%) inset;
+}
+.a-button-primary .a-button-inner {
+    background: #f3d078;
+    background: -webkit-linear-gradient(top,#f7dfa5,#f0c14b);
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+}
+.a-button-inner {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 29px;
+    border-radius: 2px;
+}
+.a-ember input, .a-ember select, .a-ember textarea {
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+button, input[type=button], input[type=reset], input[type=submit] {
+    cursor: pointer;
+    
+}
+.a-button-input {
+    position: absolute;
+    background-color: transparent;
+    color: transparent;
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: .01;
+    outline: 0;
+    overflow: visible;
+    z-index: 20;
+}
+.a-button-primary .a-button-text {
+    color: #111;
+}
+.a-ember .a-button-text {
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+.a-button-text {
+    background-color: transparent;
+    border: 0;
+    display: block;
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+    line-height: 29px;
+    margin: 0; 
+    outline: 0;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+}
 </style>
 
 <body>
@@ -64,15 +146,45 @@
 
             <div class="box-1">
                 <h2>Sign in</h2>
-                <p>Email or mobile phone number</p>
-                <input type="text"> <br>
-                <button>Continue</button>
+                <form action="">
+                <p>Email</p>
+                <input type="text" id="ap_email"> <br>
+                <p>Password</p>
+                <input type="password"  id="ap_password"> <br>
+                <div class="a-section class-2 ap_mobile_number_fields">
+                    <span id="auth-continue" class="a-button a-button-span12 a-button-primary auth-requires-verify-modal"><span class="a-button-inner"><input id="continue" tabindex="8" class="a-button-input" type="submit" aria-labelledby="auth-continue-announce"><span id="auth-continue-announce" class="a-button-text" aria-hidden="true">
+                      Continue
+                    </span></span></span>
+                  </div>
                 <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
                 <p> <i class="fa-solid fa-caret-right"></i> Need help?</p>
+                <a href="#">new costomer</a>
             </div>
+        </form>
     </div>
 </body>
 <script>
+     document.querySelector("form").addEventListener("submit", loginFun);
+    let regdUsers=JSON.parse(localStorage.getItem("userCreds"));
+    // console.log(regdUsers)
+    function loginFun() {
+        event.preventDefault();
+        let enteredEmail = document.querySelector("#ap_email").value;
+        let enteredPass = document.querySelector("#ap_password").value;
+
+        let auth=regdUsers.find((el)=>el.email==enteredEmail);
     
+
+        
+            if(auth.email == enteredEmail && auth.password == enteredPass){
+                alert("login success");
+                window.location.href = "homepage.html"
+               
+            }else{
+                alert("login failed")
+                alert("check your email and password")
+                
+            }
+       }
 </script>
 </html>

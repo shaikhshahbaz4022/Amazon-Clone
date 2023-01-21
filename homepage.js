@@ -41,5 +41,22 @@ leftbtn.addEventListener("click",(e)=>{
     x.scrollLeft -= 800;
     e.preventDefault()
     })
+
+    // const backtop = document.querySelector(".backtop");
+    // backtop.addEventListener("click"()=>{
+
+    // })
+   
+
+
+   
+	
     
+   
+
+    
+   
+    
+
+
 
