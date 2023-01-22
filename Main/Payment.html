@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shoppers Payment </title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#back_button{
+    display: flex;
+    background-color:gold ;
+    border-radius: 10px;
+    color: brown;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 25px;
+}
+
+form>h1{
+    color: #424242;
+    text-align: center;
+}
+
+
+#checkout{
+  
+background-color: #AFB42B;
+ margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 650px;
+    width: 40%;
+
+}
+form{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    padding: 30px 60px;
+}
+
+form input{
+    border-radius: 5px ;
+    margin: auto;
+   height: 20px;
+   width: 70%;
+}
+
+label{
+    margin: auto;
+    color: #424242;
+    font-weight: 600;
+}
+
+#confbutt{
+background-color: #827717;
+  border-radius: 5px;
+  color: white;
+  margin: 5px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+#conf{
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.last{
+    margin-top: 20px;
+    border-radius: 30px;
+   background:#F9FBE7;
+       display: flex;
+    justify-content: center;
+}
+
+    </style>
+</head>
+<body>
+    <a href="cart.html"><button id="back_button">Cancel Payment</button></a>
+    <div class="last">
+        <img src="https://www.linkpicture.com/q/E-Shoppers_2_-removebg-preview.png" alt="">
+    </div>
+    <div id="checkout">
+        
+        <form >
+            <h1>CHECKOUT</h1>
+            <label>Full Address with Postal PIN</label>
+            <input type="text">
+            <label>Card Number (Credit/Debit)</label>
+            <input type="number">
+            <label>Cardholder's Name</label>
+            <input type="text">
+            <label>Expiry Date</label>
+            <input type="date">
+            <label>CVV</label>
+            <input type="password">
+            <label>OTP</label>
+            <input type="password">
+            <div id="conf">
+                 <button onclick="confirm();" id="confbutt">Confirm Payment</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    function confirm()
+    {
+        alert("Your order has been placed!!")
+    }
+</script>
